@@ -1,0 +1,26 @@
+<div class="container">
+    <!-- Page Heading/Breadcrumbs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Cliente
+                <small>Detalhe de cliente</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a>
+                </li>
+                <li><a href="/cliente">Clientes</a>
+                </li>
+                <li class="active"><?php echo $clientes[$_GET['id']]->getNome();?></li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 panel-info">
+            <div class="row col-lg-12"><b>Nome:</b> <?php echo $clientes[$_GET['id']]->getNome();?></div>
+            <div class="row col-lg-12"><b>CPF:</b> <?php echo $clientes[$_GET['id']]->getCpf();?></div>
+            <div class="row col-lg-12"><b>Fone:</b> <?php echo $clientes[$_GET['id']]->getTelefone();?></div>
+            <div class="row col-lg-12"><b>Email:</b> <?php echo $clientes[$_GET['id']]->getEmail();?></div>
+            <div class="row col-lg-12"><b>Endere&ccedil;o:</b> <?php echo $clientes[$_GET['id']]->getEndereco();?></div>
+        </div>
+    </div>
+</div>
