@@ -1,0 +1,59 @@
+
+<div class="container">
+    <!-- Page Heading/Breadcrumbs -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Cliente
+                <small>Lista de clientes</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a>
+                </li>
+                <li class="active">Clientes</li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+        <table class="table tab-pane panel-info">
+            <thead>
+            <tr>
+                <td>C&oacute;digo</td>
+                <td>Nome</td>
+                <td>Telefone</td>
+                <td>Email</td>
+            </tr>
+            </thead>
+
+            <tbody>
+            <?php
+
+                foreach($clientes as $cliente){
+                    echo "<tr>";
+                    echo "<td><a class='glyphicon-check' href='/cliente/{$cliente->getCodigo()}'>{$cliente->getCodigo()}</a></td>";
+                    echo "<td>{$cliente->getNome()}</td>";
+                    echo "<td>{$cliente->getTelefone()}</td>";
+                    echo "<td>{$cliente->getEmail()}</td>";
+
+                    echo "</tr>";
+                };
+            ?>
+
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            </tbody>
+
+            <tfoot>
+
+            </tfoot>
+
+        </table>
+            </div>
+    </div>
+</div>
+
+
