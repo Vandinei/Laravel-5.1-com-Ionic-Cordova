@@ -1,25 +1,24 @@
 <?php
 
 /**
- * Created by PhpStorm.
  * User: jeferson.ferreira
  * Date: 22/10/2015
  * Time: 20:45
  * Crie uma classe com os principais atributos que um cliente deve ter, como nome, cpf, endereço, etc.
  */
-class Cliente
+abstract class Cliente
 {
     private static $lastCodigo = 0;
-    protected $codigo;
-    protected $nome;
-    protected $cpf;
-    protected $endereco;
-    protected $email;
-    protected $telefone;
+    private $codigo;
+    private $nome;
+    private $tipo;
+    private $endereco;
+    private $email;
+    private $telefone;
 
-    public function __construct($nome, $cpf, $endereco, $email, $fone){
+    public function __construct($nome, $tipo, $endereco, $email, $fone){
         $this->setNome($nome);
-        $this->setCpf($cpf);
+        $this->setTipo($tipo);
         $this->setEndereco($endereco);
         $this->setEmail($email);
         $this->setTelefone($fone);
@@ -94,20 +93,23 @@ class Cliente
     /**
      * @return mixed
      */
-    public function getCpf()
+    public function getTipo()
     {
-        return $this->cpf;
+        return $this->tipo;
     }
 
     /**
-     * @param mixed $cpf
+     * @param mixed $tipo
      */
-    public function setCpf($cpf)
+    public function setTipo($tipo)
     {
-        $this->cpf = $cpf;
+        $this->tipo = $tipo;
     }
     public function getCodigo(){
         return $this->codigo;
     }
+
+    public abstract function setDocumento($doc);
+    public abstract function getDocumento();
 
 }

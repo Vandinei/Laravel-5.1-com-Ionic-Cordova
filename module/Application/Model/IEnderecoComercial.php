@@ -1,7 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: jeferson.ferreira
- * Date: 27/10/2015
- * Time: 15:05
- */
+
+interface IEnderecoComercial{
+
+    const ENDERECO_COMERCIAL = 2;
+}

@@ -10,17 +10,18 @@
                 </li>
                 <li><a href="/cliente">Clientes</a>
                 </li>
-                <li class="active"><?php echo $clientes[$_GET['id']]->getNome();?></li>
+                <li class="active"><?php echo $clientes[filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT)]->getNome();?></li>
             </ol>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-12 panel-info">
-            <div class="row col-lg-12"><b>Nome:</b> <?php echo $clientes[$_GET['id']]->getNome();?></div>
-            <div class="row col-lg-12"><b>CPF:</b> <?php echo $clientes[$_GET['id']]->getCpf();?></div>
-            <div class="row col-lg-12"><b>Fone:</b> <?php echo $clientes[$_GET['id']]->getTelefone();?></div>
-            <div class="row col-lg-12"><b>Email:</b> <?php echo $clientes[$_GET['id']]->getEmail();?></div>
-            <div class="row col-lg-12"><b>Endere&ccedil;o:</b> <?php echo $clientes[$_GET['id']]->getEndereco();?></div>
+            <div class="row col-lg-12"><b>Tipo:</b> <?php echo  $clientes[filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT)]->getTipo()==1?'PF':'PJ';?></div>
+            <div class="row col-lg-12"><b>Nome:</b> <?php echo  $clientes[filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT)]->getNome();?></div>
+            <div class="row col-lg-12"><b>Documento:</b> <?php echo $clientes[filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT)]->getDocumento();?></div>
+            <div class="row col-lg-12"><b>Fone:</b> <?php echo $clientes[filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT)]->getTelefone();?></div>
+            <div class="row col-lg-12"><b>Email:</b> <?php echo $clientes[filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT)]->getEmail();?></div>
+            <div class="row col-lg-12"><b>Endere&ccedil;o:</b> <?php echo $clientes[filter_input(INPUT_GET,'id',FILTER_VALIDATE_INT)]->getEndereco();?></div>
         </div>
     </div>
 </div>

@@ -18,6 +18,7 @@
                 <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Tipo</th>
                     <th>Nome</th>
                     <th>Telefone</th>
                     <th>Email</th>
@@ -29,6 +30,7 @@
                 foreach ($clientes as $cliente) {
                     echo "<tr>";
                     echo "<td><a href='/cliente?id={$cliente->getCodigo()}'>{$cliente->getCodigo()}</a></td>";
+                    echo "<td>".$cliente->getTipo()."</td>";
                     echo "<td>{$cliente->getNome()}</td>";
                     echo "<td>{$cliente->getTelefone()}</td>";
                     echo "<td>{$cliente->getEmail()}</td>";
