@@ -1,6 +1,8 @@
 <?php
-require_once __DIR__."/../Application/Model/PessoaFisica.php";
-require_once __DIR__."/../Application/Model/PessoaJuridica.php";
+
+use Application\Model\PessoaFisica;
+use Application\Model\PessoaJuridica;
+
 //Clientes Pessoa Juridica
 $clientes[1] = new PessoaJuridica("T&P LDTA","59.717.553/0001-00","Trav das Rosas N 65", "julia@pn.com.br","899999999");
 $clientes[2] = new PessoaJuridica("A & C SA","59.717.553/0001-02","Avenida das Palmeiras N 50", "paula@pn.com.br","979999999");

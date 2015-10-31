@@ -5,6 +5,9 @@
  * Date: 23/10/2015
  * Time: 23:58
  */
+include_once "SplClassLoader.php";
+$loader = new SplClassLoader();
+$loader->register();
 
 $title = "Laravel 5.1 com Ionic + Cordova";
 

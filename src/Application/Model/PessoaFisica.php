@@ -1,8 +1,9 @@
 <?php
 
-require_once "Cliente.php";
-require_once "IEnderecoResidencial.php";
-require_once "IPessoaFisica.php";
+namespace Application\Model;
+use  Application\Model\Abstrato\Cliente;
+use  Application\Model\Abstrato\IEnderecoResidencial;
+use  Application\Model\Abstrato\IPessoaFisica;
 
 class PessoaFisica extends Cliente implements IPessoaFisica, IEnderecoResidencial
 {
@@ -24,7 +25,5 @@ class PessoaFisica extends Cliente implements IPessoaFisica, IEnderecoResidencia
         $this->cpf = $documento;
         return $this;
     }
-
-
 
 }

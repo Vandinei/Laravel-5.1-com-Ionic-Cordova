@@ -1,7 +1,9 @@
 <?php
-require_once "Cliente.php";
-require_once "IPessoaJuridica.php";
-require_once "IEnderecoComercial.php";
+
+namespace Application\Model;
+use  Application\Model\Abstrato\Cliente;
+use  Application\Model\Abstrato\IEnderecoComercial;
+use  Application\Model\Abstrato\IPessoaJuridica;
 
 class PessoaJuridica extends Cliente implements IPessoaJuridica, IEnderecoComercial
 {
