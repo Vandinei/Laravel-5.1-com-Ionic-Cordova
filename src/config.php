@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: jeferson.ferreira
@@ -16,15 +17,18 @@ $rotas =
         '/'=>'/home/index.phtml',
         '/cliente'=>'/cliente/clientes.phtml',
         '/cliente/id'=>'/cliente/cliente.phtml',
+        '/cliente/novo'=>'/cliente/novo.phtml',
+        '/cliente/editar/id'=>'/cliente/editar.phtml',
+        '/cliente/excluir/id'=>'/cliente/excluir.phtml',
 
     ];
 
 $getRota = function(){
 
-    if(!isset($_SERVER['QUERY_STRING']))
-        return $_SERVER['PATH_INFO'];
+    $acction = isset($_SERVER['PATH_INFO'])?$_SERVER['PATH_INFO']:'/';
 
-    $acction =  $_SERVER['PATH_INFO'];
+    if(!isset($_SERVER['QUERY_STRING']))
+        return $acction;
 
     $keys = array_keys($_GET);
 
