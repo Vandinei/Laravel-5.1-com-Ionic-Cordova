@@ -6,7 +6,7 @@
  * Date: 23/10/2015
  * Time: 23:58
  */
-include_once "SplClassLoader.php";
+include_once __DIR__."/SplClassLoader.php";
 $loader = new SplClassLoader();
 $loader->register();
 
