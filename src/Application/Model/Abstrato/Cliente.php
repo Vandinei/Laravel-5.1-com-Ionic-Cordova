@@ -4,8 +4,10 @@
  * User: jeferson.ferreira
  * Date: 22/10/2015
  * Time: 20:45
- * Crie uma classe com os principais atributos que um cliente deve ter, como nome, cpf, endereço, etc.
+ * Crie uma classe com os principais atributos que um cliente deve ter, como nome, cpf, endereï¿½o, etc.
  */
+namespace Application\Model\Abstrato;
+
 abstract class Cliente
 {
     private static $lastCodigo = 0;
