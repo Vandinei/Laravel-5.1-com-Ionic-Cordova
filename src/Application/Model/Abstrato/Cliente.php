@@ -10,21 +10,22 @@ namespace Application\Model\Abstrato;
 
 abstract class Cliente
 {
-    private static $lastCodigo = 0;
     private $codigo;
     private $nome;
     private $tipo;
     private $endereco;
     private $email;
     private $telefone;
+    private $status;
 
-    public function __construct($nome, $tipo, $endereco, $email, $fone){
+    public function __construct($codigo, $nome, $tipo, $endereco, $email, $fone){
         $this->setNome($nome);
         $this->setTipo($tipo);
         $this->setEndereco($endereco);
         $this->setEmail($email);
         $this->setTelefone($fone);
-        $this->codigo = ++self::$lastCodigo;
+        $this->status = 1;
+        $this->codigo = $codigo;
     }
     /**
      * @return mixed
@@ -108,7 +109,16 @@ abstract class Cliente
         $this->tipo = $tipo;
     }
     public function getCodigo(){
+
         return $this->codigo;
+    }
+
+    public function setCodigo($id){
+        $this->codigo = $id;
+    }
+
+    public function getStatus(){
+        return $this->status;
     }
 
     public abstract function setDocumento($doc);

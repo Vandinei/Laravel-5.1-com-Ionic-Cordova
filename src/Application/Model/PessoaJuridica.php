@@ -9,8 +9,8 @@ class PessoaJuridica extends Cliente implements IPessoaJuridica, IEnderecoComerc
 {
     private $cnpj;
 
-    public function  __construct($nome, $cnpj, $endereco, $email, $fone){
-        parent:: __construct($nome, IPessoaJuridica::TIPO_PJ, $endereco, $email, $fone);
+    public function  __construct($codigo, $nome, $cnpj, $endereco, $email, $fone){
+        parent:: __construct($codigo, $nome, IPessoaJuridica::TIPO_PJ, $endereco, $email, $fone);
         $this->cnpj = $cnpj;
 
     }

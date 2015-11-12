@@ -9,8 +9,8 @@ class PessoaFisica extends Cliente implements IPessoaFisica, IEnderecoResidencia
 {
     private $cpf;
 
-    public function  __construct($nome, $cpf, $endereco, $email, $fone){
-        parent:: __construct($nome, IPessoaFisica::TIPO_PF, $endereco, $email, $fone);
+    public function  __construct($codigo, $nome, $cpf, $endereco, $email, $fone){
+        parent:: __construct($codigo, $nome, IPessoaFisica::TIPO_PF, $endereco, $email, $fone);
         $this->cpf = $cpf;
 
     }

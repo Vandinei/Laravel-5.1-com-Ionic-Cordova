@@ -25,9 +25,12 @@
                 </tr>
                 </thead>
                 <tbody>
+
                 <?php
 
+
                 foreach ($clientes as $cliente) {
+
                     echo "<tr>";
                     echo "<td><a href='/cliente?id={$cliente->getCodigo()}'>{$cliente->getCodigo()}</a></td>";
                     echo "<td>".$cliente->getTipo()."</td>";

@@ -24,3 +24,4 @@ $content = function() use ($getRota, $isRota, $rotas, $clientes){
 };
 
 include_once __DIR__."/../src/Application/view/layout/layout.phtml";
+
