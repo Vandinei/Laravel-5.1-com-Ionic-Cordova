@@ -9,13 +9,12 @@
 namespace Application\Fixtures;
 use Application\Model\Abstrato\Cliente as AbstractCliente;
 use Application\Model\Abstrato\IPessoaFisica;
-use Application\Model\Abstrato\IPessoaJuridica;
-
 
 class Cliente
 {
     private $conn;
     const TABLE_NAME = "Cliente";
+    private $clientes;
 
     public function __construct(\PDO $conn){
         $this->conn = $conn;
@@ -23,32 +22,34 @@ class Cliente
 
     public function persist(AbstractCliente $cliente){
 
-        $stmt = $this->conn->prepare("INSERT INTO Cliente (tipo, status) VALUES
-                                    (:tipo, :status)");
-        $stmt->bindParam(':tipo', $tipo);
-        $stmt->bindParam(':status', $status);
+        $this->clientes[] = $cliente;
 
+    }
 
-        $tipo = $cliente->getTipo();
-        $status = $cliente->getStatus();
+    public function flush(){
 
-        $stmt->execute();
+        foreach($this->clientes as $cliente){
 
-        $cliente->setCodigo($this->getLastId());
+            $stmt = $this->conn->prepare("INSERT INTO Cliente (tipo, status) VALUES (:tipo, :status)");
+            $stmt->bindParam(':tipo', $tipo);
+            $stmt->bindParam(':status', $status);
+            $tipo = $cliente->getTipo();
+            $status = $cliente->getStatus();
+            $stmt->execute();
 
-        if($cliente->getTipo()==IPessoaFisica::TIPO_PF){
-            $FixturePF = new PessoaFisica($this->conn);
-            $FixturePF->persist($cliente);
+            $cliente->setCodigo($this->getLastId());
 
+            if($cliente instanceof IPessoaFisica){
+                $FixturePF = new PessoaFisica($this->conn);
+                $FixturePF->persist($cliente);
 
+            }else{
+                $FixturePJ = new PessoaJuridica($this->conn);
+                $FixturePJ->persist($cliente);
+            }
 
-        }elseif($cliente->getTipo()==IPessoaJuridica::TIPO_PJ){
-            $FixturePJ = new PessoaJuridica($this->conn);
-            $FixturePJ->persist($cliente);
 
         }
-
-
     }
 
     public function getLastId(){

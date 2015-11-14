@@ -7,7 +7,7 @@
  */
 
 require_once __DIR__."/../src/config.php";
-
+require_once __DIR__."/../src/data/RunFixtures.php";
 require_once __DIR__."/../src/data/clientes.php";
 
 
